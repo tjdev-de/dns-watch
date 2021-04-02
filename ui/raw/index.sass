@@ -1,0 +1,144 @@
+// variables
+$c-bg:    #21252b
+$c-blue:  #61afef
+$c-fg:    #d3d7de
+$c-green: #98c379
+$c-red:   #e06c75
+$f-sans:  -apple-system, system-ui, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Helvetica Neue', 'Helvetica', sans-serif
+
+// styles
+*
+	box-sizing: border-box !important
+
+html, body
+	background-color: $c-bg
+	color: $c-fg
+	font-family: $f-sans
+	margin: 0
+	padding: 0
+	overflow-x: hidden
+
+input, button
+	font-family: $f-sans
+
+#header
+	height: 4rem
+	padding: .5rem
+	width: 100vw
+	button
+		background-color: $c-bg
+		border: none
+		border-radius: .5rem
+		color: darken($c-fg, 50%)
+		cursor: pointer
+		float: right
+		height: 3rem
+		transition: all .3s ease
+		width: 3rem
+		&:hover
+			background-color: lighten($c-bg, 5%)
+			color: darken($c-fg, 20%)
+
+#title
+	margin-bottom: 5rem
+	margin-top: 5rem
+	text-align: center
+	h1
+		font-size: 4rem
+		font-weight: 200
+
+#search
+	text-align: center
+	#searchbar
+		.buttonspacer
+			display: inline-block
+			width: 3.5rem
+		input
+			background-color: lighten($c-bg, 5%)
+			border: none
+			border-radius: .5rem 0 0 .5rem
+			color: $c-fg
+			font-size: 1.5rem
+			font-weight: 300
+			height: 3rem
+			padding: .5rem 1rem
+			transition: all .3s ease
+			vertical-align: bottom
+			&:focus
+				background-color: lighten($c-bg, 10%)
+				outline: none
+		button
+			border: none
+			cursor: pointer
+			height: 3rem
+			transition: all .3s ease
+			vertical-align: bottom
+			width: 3rem
+			&#dnswatch-search-submit
+				background-color: lighten($c-bg, 10%)
+				border-radius: 0 .5rem .5rem 0
+				color: darken($c-fg, 30%)
+				&:hover
+					background-color: lighten($c-bg, 15%)
+					color: $c-fg
+			&#help
+				background-color: transparent
+				border-radius: .5rem
+				color: darken($c-fg, 50%)
+				margin-left: .5rem
+				&:hover
+					background-color: lighten($c-bg, 5%)
+					color: darken($c-fg, 20%)
+
+	small
+		display: block
+		margin-top: 1rem
+		color: darken($c-fg, 30%)
+
+#results
+	table
+		margin-left: 25vw
+		margin-top: 5rem
+		width: 50vw
+		tr
+			height: 3rem
+			td.status
+				width: 3rem
+				&.check
+					color: $c-green
+				&.cross
+					color: $c-red
+				&.ref
+					color: $c-blue
+			td.icon
+				border-left: solid transparent 2rem
+				width: 5rem
+			td.name small
+				color: darken($c-fg, 30%)
+				margin-left: 1rem
+			td.desc
+				text-align: right
+				&.blocked
+					color: $c-red
+				&.ref
+					color: $c-blue
+			td.help
+				text-align: right
+				width: 3rem
+				button
+					background-color: $c-bg
+					border: none
+					border-radius: .5rem
+					color: darken($c-fg, 50%)
+					cursor: pointer
+					height: 2rem
+					padding: .4rem
+					transition: all .3s ease
+					width: 2.1rem
+					&:hover
+						background-color: lighten($c-bg, 5%)
+						color: darken($c-fg, 20%)
+					svg
+						height: 1.2rem
+						vertical-align: -.2rem
+						width: 1.2rem
