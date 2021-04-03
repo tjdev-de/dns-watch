@@ -46,6 +46,9 @@ input, button {
   font-size: 4rem;
   font-weight: 200;
 }
+#title h1 span {
+  color: #4c5666;
+}
 
 #search {
   text-align: center;
