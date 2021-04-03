@@ -46,6 +46,9 @@ input, button {
   font-size: 4rem;
   font-weight: 200;
 }
+#title h1 span {
+  color: #4c5666;
+}
 
 #search {
   text-align: center;
@@ -119,6 +122,15 @@ input, button {
 #search #loadani span {
   color: #61afef;
   margin-left: 0.5rem;
+}
+#search #invaliddomain {
+  color: #e06c75;
+  display: none;
+  margin-top: 1rem;
+  visibility: hidden;
+}
+#search #invaliddomain .feather {
+  vertical-align: -0.3rem;
 }
 
 #results table {

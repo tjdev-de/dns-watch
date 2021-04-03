@@ -46,6 +46,8 @@ input, button
 	h1
 		font-size: 4rem
 		font-weight: 200
+		span
+			color: darken($c-fg, 50%)
 
 #search
 	text-align: center
@@ -110,6 +112,14 @@ input, button
 		span
 			color: $c-blue
 			margin-left: .5rem
+
+	#invaliddomain
+		color: $c-red
+		display: none
+		margin-top: 1rem
+		visibility: hidden
+		.feather
+			vertical-align: -.3rem
 
 #results
 	table
