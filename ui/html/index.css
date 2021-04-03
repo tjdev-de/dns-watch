@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box !important;
+}
+
+html, body {
+  background-color: #21252b;
+  color: #d3d7de;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Inter", "Segoe UI", "Helvetica Neue", "Helvetica", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+input, button {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Inter", "Segoe UI", "Helvetica Neue", "Helvetica", sans-serif;
+}
+
+#header {
+  height: 4rem;
+  padding: 0.5rem;
+  width: 100vw;
+}
+#header button {
+  background-color: #21252b;
+  border: none;
+  border-radius: 0.5rem;
+  color: #4c5666;
+  cursor: pointer;
+  float: right;
+  height: 3rem;
+  transition: all 0.3s ease;
+  width: 3rem;
+}
+#header button:hover {
+  background-color: #2c3139;
+  color: #99a2b2;
+}
+
+#title {
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+  text-align: center;
+}
+#title h1 {
+  font-size: 4rem;
+  font-weight: 200;
+}
+
+#search {
+  text-align: center;
+}
+#search #searchbar .buttonspacer {
+  display: inline-block;
+  width: 3.5rem;
+}
+#search #searchbar input {
+  background-color: #2c3139;
+  border: none;
+  border-radius: 0.5rem 0 0 0.5rem;
+  color: #d3d7de;
+  font-size: 1.5rem;
+  font-weight: 300;
+  height: 3rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  vertical-align: bottom;
+}
+#search #searchbar input:focus {
+  background-color: #373e48;
+  outline: none;
+}
+#search #searchbar button {
+  border: none;
+  cursor: pointer;
+  height: 3rem;
+  transition: all 0.3s ease;
+  vertical-align: bottom;
+  width: 3rem;
+}
+#search #searchbar button#dnswatch-search-submit {
+  background-color: #373e48;
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: #7c889c;
+}
+#search #searchbar button#dnswatch-search-submit:hover {
+  background-color: #424a56;
+  color: #d3d7de;
+}
+#search #searchbar button#help {
+  background-color: transparent;
+  border-radius: 0.5rem;
+  color: #4c5666;
+  margin-left: 0.5rem;
+}
+#search #searchbar button#help:hover {
+  background-color: #2c3139;
+  color: #99a2b2;
+}
+#search small {
+  display: block;
+  margin-top: 1rem;
+  color: #7c889c;
+}
+
+#results table {
+  margin-left: 25vw;
+  margin-top: 5rem;
+  width: 50vw;
+}
+#results table tr {
+  height: 3rem;
+}
+#results table tr td.status {
+  width: 3rem;
+}
+#results table tr td.status.check {
+  color: #98c379;
+}
+#results table tr td.status.cross {
+  color: #e06c75;
+}
+#results table tr td.status.ref {
+  color: #61afef;
+}
+#results table tr td.icon {
+  border-left: solid transparent 2rem;
+  width: 5rem;
+}
+#results table tr td.name small {
+  color: #7c889c;
+  margin-left: 1rem;
+}
+#results table tr td.desc {
+  text-align: right;
+}
+#results table tr td.desc.blocked {
+  color: #e06c75;
+}
+#results table tr td.desc.ref {
+  color: #61afef;
+}
+#results table tr td.help {
+  text-align: right;
+  width: 3rem;
+}
+#results table tr td.help button {
+  background-color: #21252b;
+  border: none;
+  border-radius: 0.5rem;
+  color: #4c5666;
+  cursor: pointer;
+  height: 2rem;
+  padding: 0.4rem;
+  transition: all 0.3s ease;
+  width: 2.1rem;
+}
+#results table tr td.help button:hover {
+  background-color: #2c3139;
+  color: #99a2b2;
+}
+#results table tr td.help button svg {
+  height: 1.2rem;
+  vertical-align: -0.2rem;
+  width: 1.2rem;
+}
+
+/*# sourceMappingURL=index.css.map */
