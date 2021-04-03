@@ -128,7 +128,7 @@ function dnswatch_search() {
 
 
 function is_valid_domain(str) {
-	let regex = /^([a-z0-9\-]+\.)+[a-z0-9]{2,}$/;
+	let regex = /^([a-z0-9\-]{1,64}\.){1,16}[a-z0-9]{2,}$/;
 	return regex.test(str);
 }
 
