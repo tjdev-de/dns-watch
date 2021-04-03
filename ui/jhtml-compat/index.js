@@ -1,11 +1,23 @@
 *stop()
 function dnswatch_search() {
+	// get domain
+	var domain = document.getElementById('dnswatch-search').value.toLowerCase();
+
+	// test if domain is invalid
+	if (!is_valid_domain(domain)) {
+		document.getElementById('results').innerHTML = '<table></table>';
+		feather.replace();
+		document.getElementById('invaliddomain').style.visibility = 'visible';
+		document.getElementById('invaliddomain').style.display = 'block';
+		return;
+	}
+
+	document.getElementById('invaliddomain').style.visibility = 'hidden';
+	document.getElementById('invaliddomain').style.display = 'none';
+
 	// activate spinner
 	document.getElementById('loadani').style.visibility = 'visible';
 	document.getElementById('loadani').style.display = 'block';
-
-	// get domain
-	var domain = document.getElementById('dnswatch-search').value.toLowerCase();
 
 	// send api request
 	var request = new XMLHttpRequest();
@@ -16,6 +28,8 @@ function dnswatch_search() {
 		if (request.status >= 200 && request.status < 400) {
 			var response = JSON.parse(this.response);
 			console.log(response);
+
+			// TODO: CLEAN UP THIS MESS OF TABLE GENERATION CODE
 
 			if (response['type'] == 'success') {   // success
 
@@ -72,22 +86,30 @@ function dnswatch_search() {
 
 			} else {   // no success
 
-				var table = '<table>\n';
-				table += '<tr>\n';
-				// status
-				table += '<td class="status cross">\n';
-				table += '<i data-feather="x"></i>\n';
-				table += '</td>\n';
-				// provider icon
-				table += '<td class="icon">\n';
-				table += '<i data-feather="x"></i>\n';
-				table += '</td>\n';
-				// name and address
-				table += `<td class="name">ERROR: ${ response["error"] }</td>\n`;
-				table += '<td class="desc ref"></td>\n';
-				table += '<td class="help"></td>\n';
-				table += '</tr>\n';
-				table += '</table>';
+				if (response['error'] == 'malformed_domain') {   // invalid domain - should not happen, but just in case i guess
+					var table = '<table></table>';
+					document.getElementById('results').innerHTML = '<table></table>';
+					feather.replace();
+					document.getElementById('invaliddomain').style.visibility = 'visible';
+					document.getElementById('invaliddomain').style.display = 'block';
+				} else {
+					var table = '<table>\n';
+					table += '<tr>\n';
+					// status
+					table += '<td class="status cross">\n';
+					table += '<i data-feather="x"></i>\n';
+					table += '</td>\n';
+					// provider icon
+					table += '<td class="icon">\n';
+					table += '<i data-feather="x"></i>\n';
+					table += '</td>\n';
+					// name and address
+					table += `<td class="name">ERROR: ${ response["error"] }</td>\n`;
+					table += '<td class="desc ref"></td>\n';
+					table += '<td class="help"></td>\n';
+					table += '</tr>\n';
+					table += '</table>';
+				}
 
 			}
 
@@ -101,6 +123,13 @@ function dnswatch_search() {
 	}
 
 	request.send(`domain=${ window.btoa(domain) }`);
+}
+
+
+
+function is_valid_domain(str) {
+	let regex = /^(?:[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?.)+[a-z0-9][a-z0-9-]{0,61}[a-z0-9]$/;
+	return regex.test(str);
 }
 
 
