@@ -95,6 +95,22 @@ input, button
 		margin-top: 1rem
 		color: darken($c-fg, 30%)
 
+	#loadani
+		display: none
+		margin-top: 1rem
+		visibility: hidden
+		#spinner
+			animation: 1s linear infinite spinner
+			border: 2px solid transparent
+			border-bottom: 2px solid $c-blue
+			border-radius: .5rem
+			display: inline-block
+			height: 1rem
+			width: 1rem
+		span
+			color: $c-blue
+			margin-left: .5rem
+
 #results
 	table
 		margin-left: 25vw
@@ -142,3 +158,9 @@ input, button
 						height: 1.2rem
 						vertical-align: -.2rem
 						width: 1.2rem
+
+@keyframes spinner
+	0%
+		transform: rotate(0deg)
+	100%
+		transform: rotate(360deg)

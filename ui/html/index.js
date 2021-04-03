@@ -1,4 +1,8 @@
 function dnswatch_search() {
+	// activate spinner
+	document.getElementById('loadani').style.visibility = 'visible';
+	document.getElementById('loadani').style.display = 'block';
+
 	// get domain
 	var domain = document.getElementById('dnswatch-search').value.toLowerCase();
 
@@ -89,6 +93,10 @@ function dnswatch_search() {
 			document.getElementById('results').innerHTML = table;
 			feather.replace();
 		}
+
+		// deactivate spinner
+		document.getElementById('loadani').style.visibility = 'hidden';
+		document.getElementById('loadani').style.display = 'none';
 	}
 
 	request.send(`domain=${ window.btoa(domain) }`);
