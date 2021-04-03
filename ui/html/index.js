@@ -26,7 +26,7 @@ function dnswatch_search() {
 	request.onload = function() {
 		if (request.status >= 200 && request.status < 400) {
 			var response = JSON.parse(this.response);
-			console.log(response);
+			//console.log(response);
 
 			// TODO: CLEAN UP THIS MESS OF TABLE GENERATION CODE
 
@@ -41,7 +41,7 @@ function dnswatch_search() {
 				table += '</td>\n';
 				// provider
 				table += '<td class="icon">\n';
-				table += `<i data-feather="${ response["data"]["reference"]["icon"] }"></i>\n`;
+				table += `<img class="uncolored-svg" src="../svg/${ response["data"]["reference"]["nameserver"] }.svg">\n`;
 				table += '</td>\n'
 				// name and address
 				table += `<td class="name">${ response["data"]["reference"]["name"] }<small>${ response["data"]["reference"]["address"] }</small></td>\n`;
@@ -57,7 +57,7 @@ function dnswatch_search() {
 					table += '<tr></tr>\n';   // spacer
 					//// search rows
 					response['data']['search'].forEach(i => {
-						console.log(i);
+						//console.log(i);
 						table += '<tr>\n';
 						// status
 						table += `<td class="status ${ i["matching"] ? "check" : "cross" }">\n`;
@@ -65,7 +65,7 @@ function dnswatch_search() {
 						table += '</td>\n';
 						// provider icon
 						table += '<td class="icon">\n';
-						table += `<i data-feather="${ i["icon"] }"></i>\n`;
+						table += `<img class="uncolored-svg" src="../svg/${ i["nameserver"] }.svg">\n`;
 						table += '</td>\n';
 						// name and address
 						table += `<td class="name">${ i["name"] }<small>${ i["address"] }</small></td>\n`;

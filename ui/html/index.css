@@ -154,7 +154,7 @@ input, button {
 }
 #results table tr td.icon {
   border-left: solid transparent 2rem;
-  width: 5rem;
+  width: 3rem;
 }
 #results table tr td.name small {
   color: #7c889c;
@@ -192,6 +192,10 @@ input, button {
   height: 1.2rem;
   vertical-align: -0.2rem;
   width: 1.2rem;
+}
+
+.uncolored-svg {
+  filter: invert(0.8);
 }
 
 @keyframes spinner {
