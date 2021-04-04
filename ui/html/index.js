@@ -55,8 +55,14 @@ function dnswatch_search() {
 					table += '</tr>\n'
 				});
 
+				table += '</table>';
+				// randomized response message
+				if (response['data']['randomized_response']) {
+					table += '<small class="random">This domain uses randomized responses. <button>Learn more</button></small>\n';
+				}
+
 				if (response['data']['found']) {   // only if reference confirms
-					table += '<tr></tr>\n';   // spacer
+					table += '<table><tr></tr>\n';   // spacer
 					//// search rows
 					response['data']['search'].forEach(i => {
 						table += '<tr>\n';
