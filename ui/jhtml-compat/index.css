@@ -52,6 +52,7 @@ input, button {
 
 #search {
   text-align: center;
+  margin-bottom: 5rem;
 }
 #search #searchbar .buttonspacer {
   display: inline-block;
@@ -133,9 +134,22 @@ input, button {
   vertical-align: -0.3rem;
 }
 
+#results small.random {
+  color: #4c5666;
+  display: block;
+  margin-top: 1rem;
+  text-align: center;
+}
+#results small.random button {
+  background: none;
+  border: none;
+  color: #626e83;
+  cursor: pointer;
+  outline: none;
+  text-decoration: underline;
+}
 #results table {
   margin-left: 25vw;
-  margin-top: 5rem;
   width: 50vw;
 }
 #results table tr {
