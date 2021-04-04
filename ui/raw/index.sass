@@ -51,6 +51,7 @@ input, button
 
 #search
 	text-align: center
+	margin-bottom: 5rem
 	#searchbar
 		.buttonspacer
 			display: inline-block
@@ -122,9 +123,21 @@ input, button
 			vertical-align: -.3rem
 
 #results
+	small.random
+		color: darken($c-fg, 50%)
+		display: block
+		margin-top: 1rem
+		text-align: center
+		button
+			background: none
+			border: none
+			color: darken($c-fg, 40%)
+			cursor: pointer
+			outline: none
+			text-decoration: underline
+
 	table
 		margin-left: 25vw
-		margin-top: 5rem
 		width: 50vw
 		tr
 			height: 3rem
