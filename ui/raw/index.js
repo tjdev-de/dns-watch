@@ -61,6 +61,7 @@ function dnswatch_search() {
 				if (response['data']['found']) {   // only if reference confirms
 					table += '<table><tr></tr>\n';   // spacer
 					//// search rows
+					let causes = [];
 					response['data']['search'].forEach(i => {
 
 						table += gen_tablerow({
@@ -71,8 +72,10 @@ function dnswatch_search() {
 							dns_address:  i['address'],
 							desc_color:   i['cause'] !== null ? 'blocked': '',
 							desc_text:    i['cause'] == 'cuii' ? 'reference' : '',
-							show_help:    i['cause'] !== null
+							show_help:    i['cause'] !== null && !causes.includes(i['cause'])
 						})
+
+						if (i['cause'] !== null) causes.push(i['cause'])
 
 					});
 				}
