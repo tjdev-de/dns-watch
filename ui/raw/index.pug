@@ -1,27 +1,35 @@
-#header
-	a( href='https://github.com/tjdev-de/dns-watch' )
-		button.spaceleft: i( data-feather='github' )
-	button: i( data-feather='globe' )
-	button: i( data-feather='sun' )
-	
-#title
-	h1 dns-watch
-		span .org
-	span by 
-		a( href='https://www.tjdev.de' ) tjdev.de
+#content
 
-#search
-	#searchbar
-		.buttonspacer
-		input#dnswatch-search( type='text' placeholder='Search...' autofocus )
-		button#dnswatch-search-submit: i( data-feather='search' )
-		button#help: i( data-feather='help-circle' )
-	small Try "gnu.org", "wikipedia.org", "s.to" or your own website!
-	#loadani
-		#spinner
-		span loading...
-	#invaliddomain
-		i( data-feather='x' )
-		span invalid domain.
+	#header
+		a( href='https://github.com/tjdev-de/dns-watch' )
+			button.spaceleft: i( data-feather='github' )
+		button: i( data-feather='globe' )
+		button: i( data-feather='sun' )
+		
+	#title
+		h1 dns-watch
+			span .org
+		span by 
+			a( href='https://www.tjdev.de' ) tjdev.de
 
-#results
+	#search
+		#searchbar
+			.buttonspacer
+			input#dnswatch-search( type='text' placeholder='Search...' autofocus )
+			button#dnswatch-search-submit: i( data-feather='search' )
+			button#help: i( data-feather='help-circle' )
+		small Try "gnu.org", "wikipedia.org", "s.to" or your own website!
+		#loadani
+			#spinner
+			span loading...
+		#invaliddomain
+			i( data-feather='x' )
+			span invalid domain.
+
+	#results
+
+#footer
+	span dns-watch.org by 
+	a( href='https://www.tjdev.de' ) tjdev.de
+	span  | 
+	a( href='/imprint' ) imprint

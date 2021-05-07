@@ -22,6 +22,9 @@ html, body
 input, button
 	font-family: $f-sans
 
+#content
+	min-height: calc(100vh - 9rem)
+
 #header
 	height: 4rem
 	padding: .5rem
@@ -193,6 +196,14 @@ input, button
 						height: 1.2rem
 						vertical-align: -.2rem
 						width: 1.2rem
+
+#footer
+	color: darken($c-fg, 30%)
+	height: 9rem
+	padding-top: 5rem
+	text-align: center
+	a
+		color: darken($c-fg, 30%)
 
 .uncolored-svg
 	filter: invert(.8)
