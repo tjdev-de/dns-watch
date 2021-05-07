@@ -71,7 +71,7 @@ function dnswatch_search() {
 							dns_name:     i['name'],
 							dns_address:  i['address'],
 							desc_color:   i['cause'] !== null ? 'blocked': '',
-							desc_text:    i['cause'] == 'cuii' ? 'reference' : '',
+							desc_text:    get_blocked_text(i['cause']),
 							show_help:    i['cause'] !== null && !causes.includes(i['cause'])
 						})
 
@@ -153,6 +153,12 @@ function get_status_icon(status) {
 	if (status === true)  return 'check'
 	if (status === false) return 'x'
 	                      return 'wifi-off'
+}
+
+function get_blocked_text(cause) {
+	if (cause == 'cuii') return 'blocked by cuii'
+	if (cause !== null)  return `bocked: ${cause}`
+	                     return ''
 }
 
 
