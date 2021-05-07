@@ -137,6 +137,7 @@ input, button {
 #results small.random {
   color: #4c5666;
   display: block;
+  font-size: 0.8rem;
   margin-top: 1rem;
   text-align: center;
 }
@@ -145,6 +146,7 @@ input, button {
   border: none;
   color: #626e83;
   cursor: pointer;
+  font-size: 0.8rem;
   outline: none;
   text-decoration: underline;
 }
@@ -166,6 +168,9 @@ input, button {
 }
 #results table tr td.status.ref {
   color: #61afef;
+}
+#results table tr td.status.offline {
+  color: #d19a66;
 }
 #results table tr td.icon {
   border-left: solid transparent 2rem;

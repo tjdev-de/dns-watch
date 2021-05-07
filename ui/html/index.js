@@ -34,28 +34,25 @@ function dnswatch_search() {
 				var table = '<table>\n';
 
 				//// reference dns
+				let first_ref = true;
 				response['data']['reference'].forEach(i => {
-					// status
-					table += '<tr>\n';
-					table += '<td class="status ref">\n';
-					table += `<i data-feather="${ i["status"] ? "check" : "x" }"></i>\n`;
-					table += '</td>\n';
-					// provider
-					table += '<td class="icon">\n';
-					table += `<img class="uncolored-svg" src="${ i["icon"] }">\n`;
-					table += '</td>\n'
-					// name and address
-					table += `<td class="name">${ i["name"] }<small>${ i["address"] }</small></td>\n`;
-					// reference info
-					table += '<td class="desc ref">reference</td>\n';
-					// help button
-					table += '<td class="help">\n';
-					table += '<button><i data-feather="help-circle"></i></button>\n';
-					table += '</td>\n';
-					table += '</tr>\n'
+
+					table += gen_tablerow({
+						status_color: 'ref',
+						status_icon:  get_status_icon(i['status']),
+						dns_icon:     i['icon'],
+						dns_name:     i['name'],
+						dns_address:  i['address'],
+						desc_color:   'ref',
+						desc_text:    'reference',
+						show_help:    first_ref
+					})
+					first_ref = false;
+
 				});
 
 				table += '</table>';
+
 				// randomized response message
 				if (response['data']['randomized_response']) {
 					table += '<small class="random">This domain uses randomized responses. <button>Learn more</button></small>\n';
@@ -64,28 +61,22 @@ function dnswatch_search() {
 				if (response['data']['found']) {   // only if reference confirms
 					table += '<table><tr></tr>\n';   // spacer
 					//// search rows
+					let causes = [];
 					response['data']['search'].forEach(i => {
-						table += '<tr>\n';
-						// status
-						table += `<td class="status ${ i["status"] ? "check" : "cross" }">\n`;
-						table += `<i data-feather="${ i["status"] ? "check" : "x" }"></i>\n`;
-						table += '</td>\n';
-						// provider icon
-						table += '<td class="icon">\n';
-						table += `<img class="uncolored-svg" src="${ i["icon"] }">\n`;
-						table += '</td>\n';
-						// name and address
-						table += `<td class="name">${ i["name"] }<small>${ i["address"] }</small></td>\n`;
-						// status info
-						if (i['cause'] !== null) {
-							if (i['cause'] == 'cuii') {
-								table += '<td class="desc blocked">blocked by cuii</td>\n';
-								table += '<td class="help">\n';
-								table += '<button><i data-feather="help-circle"></i></button>\n';
-								table += '</td>\n'
-							}
-						}
-						table += '</tr>\n';
+
+						table += gen_tablerow({
+							status_color: get_status_color(i['status']),
+							status_icon:  get_status_icon(i['status']),
+							dns_icon:     i['icon'],
+							dns_name:     i['name'],
+							dns_address:  i['address'],
+							desc_color:   i['cause'] !== null ? 'blocked': '',
+							desc_text:    get_blocked_text(i['cause']),
+							show_help:    i['cause'] !== null && !causes.includes(i['cause'])
+						})
+
+						if (i['cause'] !== null) causes.push(i['cause'])
+
 					});
 				}
 				table += '</table>';
@@ -136,6 +127,38 @@ function dnswatch_search() {
 function is_valid_domain(str) {
 	let regex = /^([a-z0-9\-]{1,64}\.){1,16}[a-z0-9]{2,}$/;
 	return regex.test(str);
+}
+
+
+
+function gen_tablerow(options) {
+	return `
+<tr>
+	<td class="status ${ options.status_color }"><i data-feather="${ options.status_icon }"></i></td>
+	<td class="icon"><img class="uncolored-svg" src="${ options.dns_icon }"></td>
+	<td class="name">${ options.dns_name }<small>${ options.dns_address }</small></td>
+	<td class="desc ${ options.desc_color }">${ options.desc_text }</td>
+	${ options.show_help ? '<td class="help"><button><i data-feather="help-circle"></i></button></td>' : '' }
+</tr>
+`
+}
+
+function get_status_color(status) {
+	if (status === true)  return 'check'
+	if (status === false) return 'cross'
+	                      return 'offline'
+}
+
+function get_status_icon(status) {
+	if (status === true)  return 'check'
+	if (status === false) return 'x'
+	                      return 'wifi-off'
+}
+
+function get_blocked_text(cause) {
+	if (cause == 'cuii') return 'blocked by cuii'
+	if (cause !== null)  return `bocked: ${cause}`
+	                     return ''
 }
 
 
