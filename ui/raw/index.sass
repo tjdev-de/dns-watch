@@ -16,11 +16,15 @@ html, body
 	color: $c-fg
 	font-family: $f-sans
 	margin: 0
-	padding: 0
 	overflow-x: hidden
+	padding: 0
+	scrollbar-color: lighten($c-bg, 20%) $c-bg !important
 
 input, button
 	font-family: $f-sans
+
+#content
+	min-height: calc(100vh - 9rem)
 
 #header
 	height: 4rem
@@ -39,6 +43,8 @@ input, button
 		&:hover
 			background-color: lighten($c-bg, 5%)
 			color: darken($c-fg, 20%)
+		&.spaceleft
+			margin-left: 1rem
 
 #title
 	margin-bottom: 5rem
@@ -47,8 +53,13 @@ input, button
 	h1
 		font-size: 4rem
 		font-weight: 200
+		margin-bottom: 1rem
 		span
 			color: darken($c-fg, 50%)
+	span
+		color: darken($c-fg, 30%)
+		a
+			color: darken($c-fg, 30%)
 
 #search
 	text-align: center
@@ -186,6 +197,14 @@ input, button
 						height: 1.2rem
 						vertical-align: -.2rem
 						width: 1.2rem
+
+#footer
+	color: darken($c-fg, 30%)
+	height: 9rem
+	padding-top: 5rem
+	text-align: center
+	a
+		color: darken($c-fg, 30%)
 
 .uncolored-svg
 	filter: invert(.8)
