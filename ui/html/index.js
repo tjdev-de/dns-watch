@@ -175,7 +175,7 @@ function show_modal(type) {
 			msg = 'This ISP (and all others with the same error message) blocked the request on behalf of <b>CUII</b>.<br>CUII is a German institution that censors parts of the Internet because of so-called copyright claims.<br>For more information about the CUII, read our <a href="/why">Why?</a> page.'
 			break;
 		case 'random':
-			msg = 'This domain uses <b>randomized responses</b>.<br>Some websites return different IP addresses for load balancing.<br>Therefore, dns-watch.org can\'t compare the results of these DNS providers and will only check for common blocking patterns.'
+			msg = 'This domain uses <b>randomized responses</b>.<br>Some websites return different IP addresses for load balancing.<br>Therefore, dns-watch.org can\'t compare the results of these DNS responses and will only check for common blocking patterns.'
 			break;
 		default:
 			msg = `It seems like something happend that shouldn\'t have happened!<br><span>Dialog message type: ${ type }</span>`

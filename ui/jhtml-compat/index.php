@@ -5,4 +5,22 @@
 *js("///index.js")
 *js("https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js")
 *postjs("///feather.js")
-<div id="content"><div id="header"><a href="https://github.com/tjdev-de/dns-watch"><button class="spaceleft"><i data-feather="github"></i></button></a><button><i data-feather="globe"></i></button><button><i data-feather="sun"></i></button></div><div id="title"><h1>dns-watch<span>.org</span></h1><span>by <a href="https://www.tjdev.de">tjdev.de</a></span></div><div id="search"><div id="searchbar"><div class="buttonspacer"></div><input id="dnswatch-search" type="text" placeholder="Search..." autofocus="autofocus"/><button id="dnswatch-search-submit"><i data-feather="search"></i></button><button id="help" onclick="show_modal(&quot;search&quot;)"><i data-feather="help-circle"></i></button></div><small>Try "gnu.org", "wikipedia.org", "s.to" or your own website!</small><div id="loadani"><div id="spinner"></div><span>loading...</span></div><div id="invaliddomain"><i data-feather="x"></i><span>invalid domain.</span></div></div><div id="results"></div></div><div id="footer"><span>dns-watch.org by </span><a href="https://www.tjdev.de">tjdev.de</a><span> | </span><a href="/imprint">imprint</a></div><div id="modal"><div id="modal-content"><div id="modal-close" onclick="close_modal()"><i data-feather="x"></i></div><div id="modal-message"></div></div></div>
+<div id="content"><div id="header"><a href="https://github.com/tjdev-de/dns-watch"><button class="spaceleft"><i data-feather="github"></i></button></a><button><i data-feather="globe"></i></button><button><i data-feather="sun"></i></button></div><div id="title"><h1>dns-watch<span>.org</span></h1><span>by <a href="https://www.tjdev.de">tjdev.de</a></span></div><div id="search"><div id="searchbar"><div class="buttonspacer"></div><input id="dnswatch-search" type="text" placeholder="Search..." autofocus="autofocus"/><button id="dnswatch-search-submit"><i data-feather="search"></i></button><button id="help" onclick="show_modal(&quot;search&quot;)"><i data-feather="help-circle"></i></button></div><small>Try "gnu.org", "wikipedia.org", "s.to" or your own website!</small><div id="loadani"><div id="spinner"></div><span>loading...</span></div><div id="invaliddomain"><i data-feather="x"></i><span>invalid domain.</span></div></div><div id="results"></div><div id="info"><h1><i data-feather="server"></i> What is dns-watch.org?</h1><p><b>dns-watch.org</b> is a service that allows you to see which (mainly
+German) Internet Service Providers (ISPs) try to censor internet access
+of their customers.<br>
+The <a href="https://cuii.info">CUII</a>, which is a German institution
+consisting of the biggest German ISPs and rightsholders, censors parts
+of the Internet to reduce the number of copyright infringements in the
+World Wide Web. In order to block these sites, they use the already
+existing DNS provided by German ISPs. When your device asks your ISP
+where it can find a website, it will give you wrong information and
+instead redirect you to the page of CUII.<br>
+Using dns-watch.org, you can check which ISPs actively censor parts of
+the Internet. This tool can also help developers of blocked sites by
+giving them information on which ISPs are blocking their web services.<br>
+We support a Free Web without Internet censorship, and so should you!</p><h1><i data-feather="tool"></i> What can I do against it?</h1><p>If you happen to be affected by Internet censorship an you're still
+using your ISP's default DNS settings, we provide resources that can
+help you switch to a more trustworthy and most of the time even faster
+DNS, thus regainig a Free Web without censorship! Read our
+<a href="/tools">tutorial</a> on how to gain back your freedom in the
+World Wide Web and circumvent DNS-blocking by ISPs!</p><a class="moreinfo" href="/why">More Information</a></div></div><div id="footer"><span>dns-watch.org by </span><a href="https://www.tjdev.de">tjdev.de</a><span> | </span><a href="/imprint">imprint</a></div><div id="modal"><div id="modal-content"><div id="modal-close" onclick="close_modal()"><i data-feather="x"></i></div><div id="modal-message"></div></div></div>
