@@ -17,7 +17,8 @@
 			.buttonspacer
 			input#dnswatch-search( type='text' placeholder='Search...' autofocus )
 			button#dnswatch-search-submit: i( data-feather='search' )
-			button#help: i( data-feather='help-circle' )
+			button#help( onclick='show_modal("search")' )
+				i( data-feather='help-circle' )
 		small Try "gnu.org", "wikipedia.org", "s.to" or your own website!
 		#loadani
 			#spinner
@@ -33,3 +34,9 @@
 	a( href='https://www.tjdev.de' ) tjdev.de
 	span  | 
 	a( href='/imprint' ) imprint
+
+#modal
+	#modal-content
+		#modal-close( onclick='close_modal()' )
+			i( data-feather='x' )
+		#modal-message
