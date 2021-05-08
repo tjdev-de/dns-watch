@@ -238,6 +238,56 @@ input, button {
   color: #7c889c;
 }
 
+#modal {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  height: 100vh;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1000;
+}
+#modal #modal-content {
+  background-color: #21252b;
+  border-radius: 0.5rem;
+  color: #d3d7de;
+  margin-left: 50%;
+  margin-top: 25%;
+  max-width: 30rem;
+  padding: 2rem;
+  transform: translate(-50%, -50%);
+  width: 90%;
+}
+#modal #modal-content #modal-close {
+  color: #4c5666;
+  float: right;
+  transition: all 0.3s ease;
+}
+#modal #modal-content #modal-close:hover, #modal #modal-content #modal-close:focus {
+  color: #7c889c;
+  cursor: pointer;
+  text-decoration: none;
+}
+#modal #modal-content #modal-message {
+  line-height: 1.8rem;
+}
+#modal #modal-content #modal-message a {
+  color: #61afef;
+  text-decoration: underline;
+}
+#modal #modal-content #modal-message b {
+  color: #61afef;
+}
+#modal #modal-content #modal-message br {
+  display: block;
+  margin-top: 1.2rem;
+}
+#modal #modal-content #modal-message span {
+  color: #7c889c;
+}
+
 .uncolored-svg {
   filter: invert(0.8);
 }
