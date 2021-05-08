@@ -93,20 +93,19 @@ function dnswatch_search() {
 					document.getElementById('invaliddomain').style.display = 'block';
 				} else {
 					var table = '<table>\n';
-					table += '<tr>\n';
-					// status
-					table += '<td class="status cross">\n';
-					table += '<i data-feather="x"></i>\n';
-					table += '</td>\n';
-					// provider icon
-					table += '<td class="icon">\n';
-					table += '<i data-feather="x"></i>\n';
-					table += '</td>\n';
-					// name and address
-					table += `<td class="name">ERROR: ${ response["error"] }</td>\n`;
-					table += '<td class="desc ref"></td>\n';
-					table += '<td class="help"></td>\n';
-					table += '</tr>\n';
+
+					table += gen_tablerow({
+						status_color: 'cross',
+						status_icon:  'x',
+						dns_icon:     'x',
+						dns_name:     `ERROR: ${ response['error'] }`,
+						dns_address:  '',
+						desc_color:   'ref',
+						desc_text:    '',
+						show_help:    false,
+						help_type:    ''
+					})
+					
 					table += '</table>';
 				}
 
