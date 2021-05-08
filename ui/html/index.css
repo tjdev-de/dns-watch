@@ -228,6 +228,42 @@ input, button {
   width: 1.2rem;
 }
 
+#info {
+  margin: 5rem auto;
+  max-width: 50rem;
+  width: 100vw;
+}
+#info h1 {
+  color: #61afef;
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding-bottom: 1rem;
+  padding-top: 5rem;
+}
+#info h1 svg {
+  vertical-align: -0.2rem;
+  margin-right: 0.3rem;
+}
+#info p {
+  line-height: 1.8rem;
+}
+#info p a {
+  color: #61afef;
+}
+#info p b {
+  color: #61afef;
+}
+#info p br {
+  display: block;
+  margin-top: 1.2rem;
+}
+#info a.moreinfo {
+  color: #61afef;
+  display: block;
+  margin-top: 5rem;
+  text-align: center;
+}
+
 #footer {
   color: #7c889c;
   height: 9rem;
