@@ -1,2 +1,2 @@
 ui/html/* linguist-vendored
-ui/jhtml-compat/* linguist-vendored
+ui/*.* linguist-vendored
