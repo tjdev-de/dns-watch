@@ -206,6 +206,47 @@ input, button
 	a
 		color: darken($c-fg, 30%)
 
+#modal
+	background-color: transparentize(#000, 0.4)
+	display: none
+	height: 100vh
+	left: 0
+	overflow: auto
+	position: fixed
+	top: 0
+	width: 100vw
+	z-index: 1000
+	#modal-content
+		background-color: $c-bg
+		border-radius: .5rem
+		color: $c-fg
+		margin-left: 50%
+		margin-top: 25%
+		max-width: 30rem
+		padding: 2rem
+		transform: translate(-50%, -50%)
+		width: 90%
+		#modal-close
+			color: darken($c-fg, 50%)
+			float: right
+			transition: all .3s ease
+			&:hover, &:focus
+				color: darken($c-fg, 30%)
+				cursor: pointer
+				text-decoration: none
+		#modal-message
+			line-height: 1.8rem
+			a
+				color: $c-blue
+				text-decoration: underline
+			b
+				color: $c-blue
+			br
+				display: block
+				margin-top: 1.2rem
+			span
+				color: darken($c-fg, 30%)
+
 .uncolored-svg
 	filter: invert(.8)
 
