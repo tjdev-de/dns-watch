@@ -9,7 +9,7 @@ We support a Free Web without Internet censorship, and so should you!
 
 
 ## Directory structure
-** Because this web page takes advantage of our custom PHP backend, the code may not make sense immediately. For research purposes, here is an outline of the directories. **
+**Because this web page takes advantage of our custom PHP backend, the code may not make sense immediately. For research purposes, here is an outline of the directories.**
 
 - config/: config files for the backend behavior
   - cache.php: lookup caching
