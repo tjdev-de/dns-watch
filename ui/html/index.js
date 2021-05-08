@@ -20,7 +20,7 @@ function dnswatch_search() {
 
 	// send api request
 	var request = new XMLHttpRequest();
-	request.open('POST', 'https://dns-watch.org/search', true);
+	request.open('POST', 'https://dns-watch.org/lookup', true);
 	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 	request.onload = function() {
