@@ -1,2 +1,2 @@
-ui/html/* linguist-vendored
-ui/*.* linguist-vendored
+start/html/* linguist-vendored
+start/*.* linguist-vendored
