@@ -16,7 +16,7 @@ mv temp ../html/index.html
 echo "<script src=\"feather.js\"></script>" >> ../html/index.html
 
 # compile sass
-sass ../src/index.sass ../html/index.css
+sassc ../src/index.sass ../html/index.css
 
 # move js
 cp ../src/*.js ../html

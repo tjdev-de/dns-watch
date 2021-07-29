@@ -21,6 +21,6 @@ giving them information on which ISPs are blocking their web services.<br>
 We support a Free Web without Internet censorship, and so should you!</p><h1><i data-feather="tool"></i> What can I do against it?</h1><p>If you happen to be affected by Internet censorship an you're still
 using your ISP's default DNS settings, we provide resources that can
 help you switch to a more trustworthy and most of the time even faster
-DNS, thus regainig a Free Web without censorship! Read our
+DNS, thus regaining a Free Web without censorship! Read our
 <a href="/tools">tutorial</a> on how to gain back your freedom in the
 World Wide Web and circumvent DNS-blocking by ISPs!</p><a class="moreinfo" href="/why">More Information</a></div></div><div id="footer"><span>dns-watch.org by </span><a href="https://www.tjdev.de">tjdev.de</a><span> | </span><a href="/imprint">imprint</a></div><div id="modal"><div id="modal-content"><div id="modal-close" onclick="close_modal()"><i data-feather="x"></i></div><div id="modal-message"></div></div></div>
