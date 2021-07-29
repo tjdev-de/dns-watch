@@ -166,7 +166,7 @@ function show_modal(type) {
 	let msg;
 	switch (type) {
 		case 'search':
-			msg = '<b>dns-watch.org</b> is a service that allows you to see how (mainly German) Internet Service Providers (ISPs) deal with Internet censorship. <a href="/why">More Information</a><br>In order to test a website for availability, enter the domain into the search bar and press Enter.<br><span>Try out these examples if you are unsure: gnu.org, wikipedia.org, s.to</span>';
+			msg = 'In order to test a website for availability, enter the domain into the search bar and press Enter.<br><span>Try out these examples if you are unsure: gnu.org, wikipedia.org, s.to</span>';
 			break;
 		case 'reference':
 			msg = 'In order to validate the DNS responses, we use <b>references</b>.<br>These references are from trustworthy DNS providers, such as Cloudflare or UncensoredDNS.<br>The responses of the DNS providers that should be tested (located in the bottom table) will be compared to the results from the references.'
