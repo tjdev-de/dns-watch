@@ -15,7 +15,7 @@ echo "*title(\"dnswatch\")
 mv temp ../index.php
 
 # compile sass
-sass ../src/index.sass ../index.css --no-source-map
+sassc ../src/index.sass ../index.css #--no-source-map
 echo '*stop()' | cat - ../index.css > temp
 mv temp ../index.css
 
