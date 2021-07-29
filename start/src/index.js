@@ -20,7 +20,11 @@ function dnswatch_search() {
 
 	// send api request
 	var request = new XMLHttpRequest();
-	request.open('POST', 'https://dns-watch.org/lookup', true);
+	request.open('POST',
+		window.location.hostname === ''
+		? 'https://dns-watch.org/lookup'   // send request to the official website when running the .html locally
+		: `https://${window.location.hostname}/lookup`,   // send request to /lookup if not running locally
+		true);
 	request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
 	request.onload = function() {
