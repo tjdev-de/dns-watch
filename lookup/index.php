@@ -8,12 +8,12 @@
 	require(CMS_path("//config/nameserver.php")); //load config file at 'dnswatch/config/nameserver.php'
 	
 	
-	// GET DOMAIN TO SEARCH FOR //
-	$__domain = base64_decode($_POST["domain"]);
+	// GET DOMAIN TO SEARCH FOR (IF IT IS SET) //
+	$__domain = (isset($_POST["domain"]) ? base64_decode($_POST["domain"]) : NULL);
 	
 	
-	// CHECK SYNTAX //
-	if(preg_match("/^([a-z0-9\-]{1,64}\.){1,16}[a-z0-9]{2,}$/", $__domain)){
+	// CHECK IF SET AND FOR SYNTAX //
+	if($__domain !== NULL and preg_match("/^([a-z0-9\-]{1,64}\.){1,16}[a-z0-9]{2,}$/", $__domain)){
 		//filter again for security
 		$__domain = STR_filter($__domain, "abcdefghijklmnopqrstuvwxyz0123456789-."); //remove all chars in $__domain which are not contained in this list
 		
